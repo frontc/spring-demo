@@ -11,7 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
     @RequestMapping(value={"/","/index.html"})
     public ModelAndView indexPage(){
-        return new ModelAndView("index");
+        ModelAndView mav = new ModelAndView("index");
+        // 通过ModelAndView的put方法设置object的内容
+        mav.getModel().put("name","lefer");
+        mav.getModel().put("note","太阳照常升起！");
+        return mav;
     }
 }
 
